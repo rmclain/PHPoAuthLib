@@ -56,7 +56,7 @@ class Facebook extends AbstractService
     const SCOPE_STATUS_UPDATE                 = 'status_update';
     // Extended Profile Properties
     const SCOPE_USER_FRIENDS                  = 'user_friends';
-    const SCOPE_USER_ABOUT                    = 'user_about_me';
+    const SCOPE_USER_ABOUT                    = 'public_profile';
     const SCOPE_FRIENDS_ABOUT                 = 'friends_about_me';
     const SCOPE_USER_ACTIVITIES               = 'user_activities';
     const SCOPE_FRIENDS_ACTIVITIES            = 'friends_activities';
@@ -162,7 +162,7 @@ class Facebook extends AbstractService
 
         $token = new StdOAuth2Token();
         $token->setAccessToken($data['access_token']);
-        
+
         if (isset($data['expires'])) {
             $token->setLifeTime($data['expires']);
         }
